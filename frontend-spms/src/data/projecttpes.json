@@ -1,0 +1,27 @@
+[
+  {
+    "ProjectTypeID": 1,
+    "ProjectTypeName": "Web Application",
+    "Description": "Projects related to websites and web applications"
+  },
+  {
+    "ProjectTypeID": 2,
+    "ProjectTypeName": "Mobile Application",
+    "Description": "Android and iOS based application projects"
+  },
+  {
+    "ProjectTypeID": 3,
+    "ProjectTypeName": "Machine Learning",
+    "Description": "Projects involving data analysis and ML models"
+  },
+  {
+    "ProjectTypeID": 4,
+    "ProjectTypeName": "Desktop Application",
+    "Description": "Standalone desktop software projects"
+  },
+  {
+    "ProjectTypeID": 5,
+    "ProjectTypeName": "IoT Project",
+    "Description": "Hardware and sensor based IoT projects"
+  }
+]
