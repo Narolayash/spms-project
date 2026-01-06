@@ -1,0 +1,47 @@
+[
+  {
+    "StudentID": 1001,
+    "StudentName": "Amit Sharma",
+    "Phone": "9876543210",
+    "Email": "amit.sharma@example.com",
+    "Description": "Final year CSE student",
+    "Created": "2024-07-01",
+    "Modified": "2024-07-01"
+  },
+  {
+    "StudentID": 1002,
+    "StudentName": "Priya Verma",
+    "Phone": "9123456780",
+    "Email": "priya.verma@example.com",
+    "Description": "Interested in Web Development",
+    "Created": "2024-07-02",
+    "Modified": "2024-07-02"
+  },
+  {
+    "StudentID": 1003,
+    "StudentName": "Rahul Mehta",
+    "Phone": "9988776655",
+    "Email": "rahul.mehta@example.com",
+    "Description": "AI & Machine Learning enthusiast",
+    "Created": "2024-07-03",
+    "Modified": "2024-07-03"
+  },
+  {
+    "StudentID": 1004,
+    "StudentName": "Neha Singh",
+    "Phone": "9090909090",
+    "Email": "neha.singh@example.com",
+    "Description": "Research project candidate",
+    "Created": "2024-07-04",
+    "Modified": "2024-07-04"
+  },
+  {
+    "StudentID": 1005,
+    "StudentName": "Karan Patel",
+    "Phone": "9012345678",
+    "Email": "karan.patel@example.com",
+    "Description": "Backend development focus",
+    "Created": "2024-07-05",
+    "Modified": "2024-07-05"
+  }
+]
