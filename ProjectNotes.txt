@@ -1,0 +1,120 @@
+-- Login Page
+	-- Role Based(Admin/Faculty/Student)
+	
+
+
+
+
+----- Project Type Master Page ----- 
+badha project na types nu list hase  
+	-Mini Project
+	-Major Project
+	-Research Project
+	-Capstone Project
+	-Internship Project
+	-Industry Sponsored Project
+	-Live Project
+	-Group Project
+	-Individual Project
+	-Prototype Development Project
+
+project na type sathe tenu description hase 
+admin	-project types add/edit/delete kri sakse
+
+Methods -- getAll Project types
+		-screen par list ma project type hase 
+
+	-- get project type (Detaile about project type/ more information about project type)
+		-koi ek project type par click krine use te project type ni more info joi sakse
+
+	-- post new project types add kari sakse
+
+	-- put project type ne edit krva
+		-user requirement parmane project type ni info edit kri sakse
+
+	-- delete project type ne delete krva
+
+
+
+----- Staff Master Page -----
+	available staff nu list hase (staff ni short ma details sathe)
+	koi staff par click kri te staff ni vadhare info joi sakase
+	new staff add kri sakay / staff delete pan kri sakay
+	staff ni info edit kari 
+
+
+
+
+
+
+
+
+
+
+------------------- Route Example ---------------------------
+function App() {
+  return (
+    <Routes>
+
+      {/* Default */}
+      <Route path="/" element={<Navigate to="/login" />} />
+      <Route path="/login" element={<Login />} />
+
+      {/* ================= ADMIN ================= */}
+      <Route
+        path="/admin"
+        element={
+          <ProtectedRoute role="admin">
+            <AdminDashboard />
+          </ProtectedRoute>
+        }
+      >
+        <Route path="project-types" element={<ProjectType />} />
+        <Route path="staff" element={<Staff />} />
+        <Route path="students" element={<Students />} />
+        <Route path="project-groups" element={<ProjectGroups />} />
+        <Route path="reports" element={<Reports />} />
+        <Route path="profile" element={<Profile />} />
+      </Route>
+
+      {/* ================= FACULTY ================= */}
+      <Route
+        path="/faculty"
+        element={
+          <ProtectedRoute role="faculty">
+            <FacultyDashboard />
+          </ProtectedRoute>
+        }
+      >
+        <Route path="projects" element={<GuideProjects />} />
+        <Route path="meetings" element={<Meetings />} />
+        <Route path="meetings/:id" element={<MeetingDetails />} />
+        <Route path="profile" element={<Profile />} />
+      </Route>
+
+      {/* ================= STUDENT ================= */}
+      <Route
+        path="/student"
+        element={
+          <ProtectedRoute role="student">
+            <StudentDashboard />
+          </ProtectedRoute>
+        }
+      >
+        <Route path="project-group" element={<ProjectGroup />} />
+        <Route path="proposal" element={<ProjectProposal />} />
+        <Route path="documents" element={<Documents />} />
+        <Route path="meetings" element={<MeetingHistory />} />
+        <Route path="profile" element={<Profile />} />
+      </Route>
+
+      {/* 404 */}
+      <Route path="*" element={<h2>Page Not Found</h2>} />
+
+    </Routes>
+  );
+}
+
+export default App;
+
+

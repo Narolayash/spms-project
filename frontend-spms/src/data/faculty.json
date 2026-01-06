@@ -1,0 +1,52 @@
+[
+  {
+    "StaffID": 1,
+    "StaffName": "Dr. Anil Sharma",
+    "Phone": "9876543210",
+    "Email": "anil.sharma@college.edu",
+    "Password": "hashed_password_1",
+    "Description": "HOD - Computer Science, Senior Project Guide",
+    "Created": "2025-07-01T10:15:00",
+    "Modified": "2025-07-01T10:15:00"
+  },
+  {
+    "StaffID": 2,
+    "StaffName": "Prof. Neha Verma",
+    "Phone": "9123456780",
+    "Email": "neha.verma@college.edu",
+    "Password": "hashed_password_2",
+    "Description": "Guide for Web Development & Software Engineering projects",
+    "Created": "2025-07-02T11:00:00",
+    "Modified": "2025-07-02T11:00:00"
+  },
+  {
+    "StaffID": 3,
+    "StaffName": "Dr. Rahul Mehta",
+    "Phone": "9988776655",
+    "Email": "rahul.mehta@college.edu",
+    "Password": "hashed_password_3",
+    "Description": "Expert Faculty – AI & Machine Learning evaluator",
+    "Created": "2025-07-03T09:30:00",
+    "Modified": "2025-07-03T09:30:00"
+  },
+  {
+    "StaffID": 4,
+    "StaffName": "Ms. Pooja Iyer",
+    "Phone": "9012345678",
+    "Email": "pooja.iyer@college.edu",
+    "Password": "hashed_password_4",
+    "Description": "Project Convener, Database & Backend Systems",
+    "Created": "2025-07-04T14:20:00",
+    "Modified": "2025-07-04T14:20:00"
+  },
+  {
+    "StaffID": 5,
+    "StaffName": "Prof. Suresh Patil",
+    "Phone": "9090909090",
+    "Email": "suresh.patil@college.edu",
+    "Password": "hashed_password_5",
+    "Description": "Guide for Research & Minor Projects",
+    "Created": "2025-07-05T16:45:00",
+    "Modified": "2025-07-05T16:45:00"
+  }
+]
