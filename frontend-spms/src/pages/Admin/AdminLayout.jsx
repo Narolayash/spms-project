@@ -3,9 +3,14 @@ import Navbar from "../../component/Navbar";
 import Sidebar from "../../component/Sidebar";
 import AdminNavbar from "./AdminNavbar";
 import AdminSidebar from "./AdminSidebar";
+import { useEffect } from "react";
 
 
 function AdminLayout() {
+
+    useEffect(() => {
+        document.title = `SPMS - Admin`
+    }, []);
 
     return (
         <>

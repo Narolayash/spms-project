@@ -2,7 +2,7 @@ import React from "react";
 
 const AdminNavbar = () => {
   return (
-    <nav className="navbar navbar-dark bg-dark fixed-top">
+    <nav className="navbar navbar-dark bg-dark fixed-top px-3">
         <div className="container-fluid">
             <span className="navbar-brand mb-0 h1">
                 SPMS - Admin Panel

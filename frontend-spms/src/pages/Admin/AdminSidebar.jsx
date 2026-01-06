@@ -16,6 +16,12 @@ const AdminSidebar = () => {
         </li>
 
         <li className="nav-item">
+          <NavLink className="nav-link" to="/admin/profile">
+            My Profile
+          </NavLink>
+        </li>
+
+        <li className="nav-item">
           <NavLink className="nav-link" to="/admin/project-types">
             Project Types
           </NavLink>

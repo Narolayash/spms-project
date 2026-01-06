@@ -1,8 +1,14 @@
 import { Outlet } from "react-router-dom";
 import StudentNavbar from "./StudentNavbar";
 import StudentSidebar from "./StudentSidebar";
+import { useEffect } from "react";
 
 function StudentLayout() {
+
+  useEffect(() => {
+      document.title = `SPMS - Student`
+  }, []);
+
   return (
     <>
       <StudentNavbar />
