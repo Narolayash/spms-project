@@ -39,18 +39,69 @@ function FacultyForm() {
     };
 
     return (
-        <>
-            <form onSubmit={handleSubmit} className="card p-3 mb-3">
-                <input className="form-control mb-2" name="StaffName" placeholder="Name" value={form.StaffName} onChange={handleChange} />
-                <input className="form-control mb-2" name="Phone" placeholder="Phone" value={form.Phone} onChange={handleChange} />
-                <input className="form-control mb-2" name="Email" placeholder="Email" value={form.Email} onChange={handleChange} />
-                <input className="form-control mb-2" name="Description" placeholder="Description" value={form.Description} onChange={handleChange} />
-                <button className="btn btn-primary">
-                    {form.StaffID ? "Update" : "Add"}
-                </button>
-            </form>
-        
-        </>
+        <div className="container mt-4">
+            <div className="row justify-content-center">
+                <div className="col-md-6">
+                    <div className="card shadow-sm">
+                        <div className="card-header bg-primary text-white fw-bold">
+                            {form.StaffID ? "Edit Faculty" : "Add Faculty"}
+                        </div>
+
+                        <div className="card-body">
+                            <form onSubmit={handleSubmit}>
+                                <input
+                                className="form-control mb-3"
+                                name="StaffName"
+                                placeholder="Faculty Name"
+                                value={form.StaffName}
+                                onChange={handleChange}
+                                />
+
+                                <input
+                                className="form-control mb-3"
+                                name="Phone"
+                                placeholder="Phone"
+                                value={form.Phone}
+                                onChange={handleChange}
+                                />
+
+                                <input
+                                className="form-control mb-3"
+                                name="Email"
+                                placeholder="Email"
+                                value={form.Email}
+                                onChange={handleChange}
+                                />
+
+                                <textarea
+                                className="form-control mb-3"
+                                name="Description"
+                                placeholder="Description"
+                                value={form.Description}
+                                onChange={handleChange}
+                                rows="3"
+                                />
+
+                                <div className="d-flex justify-content-between">
+                                    <button className="btn btn-success">
+                                        {form.StaffID ? "Update Faculty" : "Add Faculty"}
+                                    </button>
+
+                                    <button
+                                        type="button"
+                                        className="btn btn-secondary"
+                                        onClick={() => navigate("/admin/faculty")}
+                                    >
+                                        Cancel
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     )
 }
 

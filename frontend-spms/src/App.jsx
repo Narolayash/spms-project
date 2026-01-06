@@ -2,14 +2,14 @@ import { Navigate, Route, Routes } from "react-router-dom";
 
 import Login from "./pages/commanpages/Login";
 
-import FacultyDashboard from "./pages/Faculty/FacultyDashboard";
-
 // Admin Routes
 import AdminLayout from "./pages/Admin/AdminLayout";
 import AdminDashboard from "./pages/Admin/AdminDashboard";
 import Faculties from "./pages/Admin/Faculties";
 import FacultyForm from "./pages/Admin/FacultyForm";
 
+// Faculty Routes
+import FacultyDashboard from "./pages/Faculty/FacultyDashboard";
 
 function App() {
     
