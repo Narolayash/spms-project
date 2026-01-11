@@ -23,6 +23,10 @@ function ProfileUpdate() {
     navigate("/student/profile");
   };
 
+  const handleCancel = () => {
+    navigate("/student/profile");
+  };
+
   return (
     <form onSubmit={handleSubmit} className="col-md-6">
       <div className="mb-3">
@@ -76,6 +80,8 @@ function ProfileUpdate() {
       </div>
 
       <button className="btn btn-success">Update</button>
+
+      <button type="button" className="btn btn-secondary ms-2" onClick={handleCancel}> Cancel</button>
     </form>
   );
 }

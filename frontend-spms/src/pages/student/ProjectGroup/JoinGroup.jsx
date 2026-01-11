@@ -5,6 +5,16 @@ const JoinGroup = () => {
   const navigate = useNavigate();
   const [groupCode, setGroupCode] = useState("");
 
+//   const handleJoin = () => {
+//   // API call
+//   POST /api/groups/join-request
+//   {
+//     groupCode,
+//     studentId
+//   }
+// };
+
+
   return (
     <div className="card mt-4 p-3">
       <h5>Join Project Group</h5>
@@ -16,7 +26,10 @@ const JoinGroup = () => {
       />
 
       <div className="d-flex gap-2 mt-3">
-        <button className="btn btn-primary">
+        <button 
+          className="btn btn-primary"
+          // onClick={() => navigate("/student/project-group")}
+        >
           Join
         </button>
 

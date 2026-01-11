@@ -1,6 +1,8 @@
 import { Outlet, useNavigate } from "react-router-dom";
+import JoinRequestNotification from "./JoinRequestNotification";
 
 const ProjectGroupLayout = () => {
+  
   const navigate = useNavigate();
 
   return (
@@ -9,7 +11,9 @@ const ProjectGroupLayout = () => {
       <div className="d-flex justify-content-between align-items-center">
         <h3>Project Group</h3>
 
-        <div className="d-flex gap-2">
+        <div className="d-flex gap-3 align-items-center">
+          <JoinRequestNotification />
+
           <button
             className="btn btn-primary"
             onClick={() => navigate("create")}
@@ -24,6 +28,7 @@ const ProjectGroupLayout = () => {
             Join Group
           </button>
         </div>
+
       </div>
 
       <Outlet />

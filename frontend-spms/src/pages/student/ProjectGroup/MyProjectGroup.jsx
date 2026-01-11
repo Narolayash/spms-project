@@ -1,8 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const ProjectGroup = () => {
+  const navigate = useNavigate();
 
-  // multiple groups supported
   const myGroups = [
     {
       id: 1,
@@ -15,24 +16,19 @@ const ProjectGroup = () => {
 
   return (
     <div className="mt-4">
-      {myGroups.length === 0 ? (
-        <p className="text-muted">You are not part of any project group.</p>
-      ) : (
-        myGroups.map(group => (
-          <div key={group.id} className="card p-3 mb-3">
-            <p><b>Group:</b> {group.groupName}</p>
-            <p><b>Title:</b> {group.projectTitle}</p>
-            <p><b>Type:</b> {group.projectType}</p>
-
-            <b>Members:</b>
-            <ul>
-              {group.members.map((m, i) => (
-                <li key={i}>{m}</li>
-              ))}
-            </ul>
-          </div>
-        ))
-      )}
+      {myGroups.map(group => (
+        <div
+          key={group.id}
+          className="card p-3 mb-3"
+          style={{ cursor: "pointer" }}
+          onClick={() => navigate(`${group.id}`)}
+        >
+          <h5>{group.groupName}</h5>
+          <p><b>Title:</b> {group.projectTitle}</p>
+          <p><b>Type:</b> {group.projectType}</p>
+          {/* <span className="badge bg-info">{group.projectType}</span> */}
+        </div>
+      ))}
     </div>
   );
 };

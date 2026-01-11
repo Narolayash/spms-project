@@ -118,3 +118,42 @@ function App() {
 export default App;
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+New Table
+
+ProjectGroupJoinRequest Table 
+
+RequestID
+ProjectGroupID
+StudentID
+RequestStatus   (Pending / Approved / Rejected)
+RequestedAt
+ActionedAt
+
+
+
+
+
+
+
+
+
+
+
+
+

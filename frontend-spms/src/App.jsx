@@ -26,6 +26,7 @@ import StudentDashboard from "./pages/Student/StudentDashboard";
 import ProfileLayout from "./pages/Student/Profile/ProfileLayout";
 import ProfileView from "./pages/Student/Profile/ProfileView";
 import ProfileUpdate from "./pages/Student/Profile/ProfileUpdate";
+import ProjectDetail from "./pages/Student/ProjectGroup/ProjectDetail";
 
 import ProjectGroupLayout from "./pages/Student/ProjectGroup/ProjectGroupLayout";
 import ProjectGroup from "./pages/Student/ProjectGroup/MyProjectGroup";
@@ -78,6 +79,7 @@ function App() {
             <Route index element={<ProjectGroup />} />
             <Route path="create" element={<CreateGroupForm />} />
             <Route path="join" element={<JoinGroup />} />
+            <Route path=":groupId" element={<ProjectDetail />} />
           </Route>
 
 
