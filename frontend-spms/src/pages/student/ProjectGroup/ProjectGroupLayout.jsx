@@ -28,6 +28,7 @@ const ProjectGroupLayout = () => {
 
       <Outlet />
     </div>
+    
   );
 };
 

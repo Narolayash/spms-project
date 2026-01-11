@@ -15,12 +15,6 @@ const StudentSidebar = () => {
           </NavLink>
         </li>
 
-        <li className="nav-item">
-          <NavLink className="nav-link" to="/student/profile">
-            My Profile
-          </NavLink>
-        </li>
-
         {/* <li className="nav-item">
           <NavLink className="nav-link" to="/student/project-group">
             My Project Group

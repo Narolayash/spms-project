@@ -21,9 +21,14 @@ import FacultyProfile from "./pages/Faculty/FacultyProfile";
 // Student Routes
 import StudentLayout from "./pages/Student/StudentLayout";
 import StudentDashboard from "./pages/Student/StudentDashboard";
-import StudentProfile from "./pages/Student/StudentProfile";
+
+// import StudentProfile from "./pages/Student/StudentProfile";
+import ProfileLayout from "./pages/Student/Profile/ProfileLayout";
+import ProfileView from "./pages/Student/Profile/ProfileView";
+import ProfileUpdate from "./pages/Student/Profile/ProfileUpdate";
+
 import ProjectGroupLayout from "./pages/Student/ProjectGroup/ProjectGroupLayout";
-import ProjectGroup from "./pages/Student/ProjectGroup/ProjectGroup";
+import ProjectGroup from "./pages/Student/ProjectGroup/MyProjectGroup";
 import JoinGroup from "./pages/Student/ProjectGroup/JoinGroup";
 import CreateGroupForm from "./pages/Student/ProjectGroup/CreateGroup";
 
@@ -32,7 +37,7 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={ <Navigate to="/login" />} />
+        <Route path="/" element={ <Navigate to="/login" replace />} />
         <Route path="/login" element={ <Login /> } />
 
         <Route 
@@ -41,7 +46,7 @@ function App() {
             <AdminLayout />
           }
         >
-          <Route index element={ <Navigate to="dashboard" /> } />
+          <Route index element={ <Navigate to="dashboard" replace /> } />
           <Route path="dashboard" element={ <AdminDashboard /> } />
           <Route path="profile" element={ <AdminProfile /> } />
           <Route path="faculty" element={ <Faculties /> } />
@@ -60,9 +65,15 @@ function App() {
           <StudentLayout />
           }
         >
-          <Route index element={ <Navigate to="dashboard" /> } />
+          <Route index element={ <Navigate to="dashboard" replace /> } />
           <Route path="dashboard" element={ <StudentDashboard /> } />
-          <Route path="profile" element={ <StudentProfile /> } />
+
+          {/* <Route path="profile" element={ <StudentProfile /> } /> */}
+          <Route path="profile" element={<ProfileLayout />}>
+            <Route index element={<ProfileView />} />
+            <Route path="update" element={<ProfileUpdate />} />
+          </Route>
+
           <Route path="project-group" element={<ProjectGroupLayout />}>
             <Route index element={<ProjectGroup />} />
             <Route path="create" element={<CreateGroupForm />} />
@@ -82,7 +93,7 @@ function App() {
           <FacultyLayout />
           }
         >
-          <Route index element={ <Navigate to="dashboard" /> } />
+          <Route index element={ <Navigate to="dashboard" replace /> } />
           <Route path="dashboard" element={ <FacultyDashboard /> } />
           <Route path="profile" element={ <FacultyProfile /> } />
           {/* <Route path="proposals" element={  } />

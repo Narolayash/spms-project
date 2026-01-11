@@ -1,6 +1,10 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const StudentNavbar = () => {
+    // student profile
+    // logout logic
+
   return (
     <nav className="navbar navbar-dark bg-primary fixed-top px-3">
         <div className="container-fluid">
@@ -8,7 +12,10 @@ const StudentNavbar = () => {
                 SPMS - Student Panel
             </span>
             <div className="d-flex align-items-center gap-3">
-                <span className="text-white">Student</span>
+                {/* // my profile page ahi  thi open thase  */}
+                <span className="text-white">
+                    <NavLink className="nav-link" to="/student/profile" >Profile</NavLink>
+                </span>
                 <button className="btn btn-outline-light btn-sm">
                     Logout
                 </button>
