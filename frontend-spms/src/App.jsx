@@ -13,25 +13,34 @@ import StudentForm from "./pages/Admin/StudentForm";
 import ProjectTypeList from "./pages/Admin/ProjectTypes";
 import ProjectTypeForm from "./pages/Admin/ProjectTypeForm";
 
+
+
 // Faculty Routes
 import FacultyLayout from "./pages/Faculty/FacultyLayout";
 import FacultyDashboard from "./pages/Faculty/FacultyDashboard";
 import FacultyProfile from "./pages/Faculty/FacultyProfile";
 
+
+
 // Student Routes
 import StudentLayout from "./pages/Student/StudentLayout";
 import StudentDashboard from "./pages/Student/StudentDashboard";
 
-// import StudentProfile from "./pages/Student/StudentProfile";
 import ProfileLayout from "./pages/Student/Profile/ProfileLayout";
 import ProfileView from "./pages/Student/Profile/ProfileView";
 import ProfileUpdate from "./pages/Student/Profile/ProfileUpdate";
-import ProjectDetail from "./pages/Student/ProjectGroup/ProjectDetail";
 
+import ProjectDetail from "./pages/Student/ProjectGroup/ProjectDetail";
 import ProjectGroupLayout from "./pages/Student/ProjectGroup/ProjectGroupLayout";
 import ProjectGroup from "./pages/Student/ProjectGroup/MyProjectGroup";
 import JoinGroup from "./pages/Student/ProjectGroup/JoinGroup";
 import CreateGroupForm from "./pages/Student/ProjectGroup/CreateGroup";
+import MeetingLayout from "./pages/Student/Meeting/MeetingLayout";
+import StudentMeetings from "./pages/Student/Meeting/StudentMeetings";
+import MeetingDetail from "./pages/Student/Meeting/MeetingDetail";
+
+
+
 
 function App() {
     
@@ -61,31 +70,37 @@ function App() {
         </Route>
 
         <Route 
-          path="/student" 
+          path="/student"
           element={
           <StudentLayout />
           }
         >
           <Route index element={ <Navigate to="dashboard" replace /> } />
+          {/* student/dashboard */}
           <Route path="dashboard" element={ <StudentDashboard /> } />
 
-          {/* <Route path="profile" element={ <StudentProfile /> } /> */}
+          {/* student/profile */}
           <Route path="profile" element={<ProfileLayout />}>
             <Route index element={<ProfileView />} />
             <Route path="update" element={<ProfileUpdate />} />
           </Route>
 
+          {/* student/project-group */}
           <Route path="project-group" element={<ProjectGroupLayout />}>
             <Route index element={<ProjectGroup />} />
             <Route path="create" element={<CreateGroupForm />} />
             <Route path="join" element={<JoinGroup />} />
             <Route path=":groupId" element={<ProjectDetail />} />
+
+            {/* student meeting */}
+            <Route path=":groupId/meetings" element={<MeetingLayout />}>
+              <Route index element={<StudentMeetings />} />
+              <Route path=":meetingId" element={<MeetingDetail />} />
+            </Route>
           </Route>
 
-
           {/* <Route path="proposal" element= {  }/> */}
-          {/* <Route path="meetings" element={  } />
-          <Route path="documents" element={  } />
+          {/*<Route path="documents" element={  } />
           <Route path="attendance" element={ } /> */}
         </Route>
 
