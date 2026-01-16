@@ -28,6 +28,13 @@ const StudentSidebar = () => {
         </li>
 
         {/* <li className="nav-item">
+          <NavLink className="nav-link" to="/student/proposal">
+            Proposal
+          </NavLink>
+        </li> */}
+
+
+        {/* <li className="nav-item">
           <NavLink className="nav-link" to="/student/project-details">
             Project Details
           </NavLink>

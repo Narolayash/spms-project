@@ -38,6 +38,10 @@ import CreateGroupForm from "./pages/Student/ProjectGroup/CreateGroup";
 import MeetingLayout from "./pages/Student/Meeting/MeetingLayout";
 import StudentMeetings from "./pages/Student/Meeting/StudentMeetings";
 import MeetingDetail from "./pages/Student/Meeting/MeetingDetail";
+import ProposalLayout from "./pages/Student/ProjectGroup/Proposal/ProposalLayout";
+import ProposalStatus from "./pages/Student/ProjectGroup/Proposal/ProposalStatus";
+import ProposalForm from "./pages/Student/ProjectGroup/Proposal/ProposalForm";
+import ProposalView from "./pages/Student/ProjectGroup/Proposal/ProposalView";
 
 
 
@@ -97,9 +101,21 @@ function App() {
               <Route index element={<StudentMeetings />} />
               <Route path=":meetingId" element={<MeetingDetail />} />
             </Route>
+
+            <Route path=":groupId/proposal" element={<ProposalLayout />}>
+              <Route index element={<ProposalStatus />} />
+              <Route path="submit" element={<ProposalForm />} />
+              <Route path="view" element={<ProposalView />} />
+            </Route>
           </Route>
 
-          {/* <Route path="proposal" element= {  }/> */}
+          {/* student/proposal */}
+          {/* <Route path="proposal" element={<ProposalLayout />}>
+            <Route index element={<ProposalStatus />} />
+            <Route path="submit" element={<ProposalForm />} />
+            <Route path="view" element={<ProposalView />} />
+          </Route> */}
+
           {/*<Route path="documents" element={  } />
           <Route path="attendance" element={ } /> */}
         </Route>

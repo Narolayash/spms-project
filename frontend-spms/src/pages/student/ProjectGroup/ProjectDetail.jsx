@@ -57,6 +57,16 @@ const ProjectDetail = () => {
           </li>
         ))}
       </ul>
+
+        <button
+          className="btn btn-outline-primary me-2"
+          onClick={() =>
+            navigate(`/student/project-group/${groupId}/proposal`)
+          }
+        >
+          Proposal
+        </button>
+
       <button
         className="btn btn-outline-primary mt-3"
         onClick={() =>
