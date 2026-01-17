@@ -42,6 +42,10 @@ import ProposalLayout from "./pages/Student/ProjectGroup/Proposal/ProposalLayout
 import ProposalStatus from "./pages/Student/ProjectGroup/Proposal/ProposalStatus";
 import ProposalForm from "./pages/Student/ProjectGroup/Proposal/ProposalForm";
 import ProposalView from "./pages/Student/ProjectGroup/Proposal/ProposalView";
+import DocumentLayout from "./pages/Student/ProjectGroup/Documents/DocumentLayout";
+import DocumentList from "./pages/Student/ProjectGroup/Documents/DocumentList";
+import UploadDocument from "./pages/Student/ProjectGroup/Documents/UploadDocument";
+import DocumentPreview from "./pages/Student/ProjectGroup/Documents/DocumentPreview";
 
 
 
@@ -100,6 +104,13 @@ function App() {
             <Route path=":groupId/meetings" element={<MeetingLayout />}>
               <Route index element={<StudentMeetings />} />
               <Route path=":meetingId" element={<MeetingDetail />} />
+            </Route>
+
+            {/* DOCUMENTS */}
+            <Route path=":groupId/documents" element={<DocumentLayout />}>
+              <Route index element={<DocumentList />} />
+              <Route path="upload" element={<UploadDocument />} />
+              <Route path=":docId" element={<DocumentPreview />} />
             </Route>
 
             <Route path=":groupId/proposal" element={<ProposalLayout />}>

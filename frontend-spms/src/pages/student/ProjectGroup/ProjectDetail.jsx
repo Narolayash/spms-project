@@ -5,7 +5,6 @@ const ProjectDetail = () => {
   const { groupId } = useParams();
   const navigate = useNavigate();
 
-  // Dummy data (later API se aayega)
   const project = {
     groupName: "Avengers",
     projectTitle: "THE AVENGERS INITIATIVE",
@@ -26,11 +25,15 @@ const ProjectDetail = () => {
 
   return (
     <div className="card mt-4 p-4">
+
+      {/* ✅ FIXED BACK BUTTON */}
       <button
         className="btn btn-sm btn-outline-secondary mb-3"
-        onClick={() => navigate(-1)}
+        onClick={() =>
+          navigate("/student/project-group")
+        }
       >
-        ← Back
+        ← Back to Project List
       </button>
 
       <h4>{project.projectTitle}</h4>
@@ -58,6 +61,7 @@ const ProjectDetail = () => {
         ))}
       </ul>
 
+      <div className="mt-3">
         <button
           className="btn btn-outline-primary me-2"
           onClick={() =>
@@ -67,14 +71,24 @@ const ProjectDetail = () => {
           Proposal
         </button>
 
-      <button
-        className="btn btn-outline-primary mt-3"
-        onClick={() =>
-          navigate(`/student/project-group/${groupId}/meetings`)
-        }
-      >
-        View Meetings
-      </button>
+        <button
+          className="btn btn-outline-primary me-2"
+          onClick={() =>
+            navigate(`/student/project-group/${groupId}/meetings`)
+          }
+        >
+          Meetings
+        </button>
+
+        <button
+          className="btn btn-outline-success"
+          onClick={() =>
+            navigate(`/student/project-group/${groupId}/documents`)
+          }
+        >
+          Documents
+        </button>
+      </div>
 
     </div>
   );

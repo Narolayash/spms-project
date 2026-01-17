@@ -46,11 +46,11 @@ const StudentSidebar = () => {
           </NavLink>
         </li> */}
 
-        <li className="nav-item">
+        {/* <li className="nav-item">
           <NavLink className="nav-link" to="/student/documents">
             Documents
           </NavLink>
-        </li>
+        </li> */}
 
       </ul>
     </div>

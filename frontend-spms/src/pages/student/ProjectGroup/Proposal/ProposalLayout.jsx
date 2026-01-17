@@ -6,19 +6,28 @@ const ProposalLayout = () => {
 
   return (
     <div className="container mt-4">
+
+      {/* 🔙 BACK BUTTON */}
+      <button
+        className="btn btn-sm btn-outline-secondary mb-3"
+        onClick={() =>
+          navigate(`/student/project-group/${groupId}`)
+        }
+      >
+        ← Back to Project
+      </button>
+
       <div className="d-flex justify-content-between align-items-center">
         <h3>Project Proposal</h3>
 
-        <div className="d-flex gap-2">
-          <button
-            className="btn btn-primary"
-            onClick={() =>
-              navigate(`/student/project-group/${groupId}/proposal/submit`)
-            }
-          >
-            New Proposal
-          </button>
-        </div>
+        <button
+          className="btn btn-primary"
+          onClick={() =>
+            navigate(`/student/project-group/${groupId}/proposal/submit`)
+          }
+        >
+          New Proposal
+        </button>
       </div>
 
       <hr />
