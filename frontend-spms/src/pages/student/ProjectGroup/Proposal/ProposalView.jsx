@@ -1,10 +1,10 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 
 const ProposalView = () => {
   const { groupId } = useParams();
   const navigate = useNavigate();
+  const location = useLocation();
 
-  // 🔥 Dummy data (API later)
   const proposal = {
     title: "AI Based Student Monitoring",
     area: "Artificial Intelligence",
@@ -15,6 +15,8 @@ const ProposalView = () => {
     status: "Pending"
   };
 
+  const backPath = location.state?.from || `/student/project-group/${groupId}/proposal`;
+
   return (
     <div className="card mt-4 p-4">
 
@@ -22,7 +24,7 @@ const ProposalView = () => {
       <button
         className="btn btn-sm btn-outline-secondary mb-3"
         onClick={() =>
-          navigate(`/student/project-group/${groupId}/proposal`)
+          navigate(backPath)
         }
       >
         ← Back

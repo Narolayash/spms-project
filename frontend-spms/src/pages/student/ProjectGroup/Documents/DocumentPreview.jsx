@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 
 const DocumentPreview = () => {
   const { groupId, docId } = useParams();
@@ -12,17 +12,22 @@ const DocumentPreview = () => {
     description: "Initial project proposal document"
   };
 
+  const location = useLocation();
+  const backPath =
+    location.state?.from ||
+    `/student/project-group/${groupId}/documents`;
+
+
   return (
     <div className="card mt-4 p-4">
 
       <button
         className="btn btn-sm btn-outline-secondary mb-3"
-        onClick={() =>
-          navigate(`/student/project-group/${groupId}/documents`)
-        }
+        onClick={() => navigate(backPath)}
       >
         ← Back
       </button>
+
 
       <h5>{document.name}</h5>
 

@@ -15,11 +15,11 @@ const FacultySidebar = () => {
           </NavLink>
         </li>
 
-        <li className="nav-item">
+        {/* <li className="nav-item">
           <NavLink className="nav-link" to="/faculty/profile">
             My Profile
           </NavLink>
-        </li>
+        </li> */}
 
         <li className="nav-item">
           <NavLink className="nav-link" to="/faculty/project-groups">

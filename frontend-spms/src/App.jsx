@@ -16,7 +16,7 @@ import ProjectTypeForm from "./pages/Admin/ProjectTypeForm";
 // Faculty Routes
 import FacultyLayout from "./pages/Faculty/FacultyLayout";
 import FacultyDashboard from "./pages/Faculty/FacultyDashboard";
-import FacultyProfile from "./pages/Faculty/FacultyProfile";
+import FacultyProfile from "./pages/Faculty/Profile/ProfileLayout";
 
 // Student Routes
 import StudentLayout from "./pages/Student/StudentLayout";
@@ -41,6 +41,14 @@ import DocumentList from "./pages/Student/ProjectGroup/Documents/DocumentList";
 import UploadDocument from "./pages/Student/ProjectGroup/Documents/UploadDocument";
 import DocumentPreview from "./pages/Student/ProjectGroup/Documents/DocumentPreview";
 import ProtectedRoute from "./routes/ProtectedRoute";
+import StudentAllProposals from "./pages/Student/Proposals/StudentAllProposals";
+import StudentAllMeetings from "./pages/Student/Meetings/StudentAllMeetings";
+import StudentAllDocuments from "./pages/Student/Documents/StudentAllDocuments";
+
+import FacultyProfileLayout from "./pages/Faculty/Profile/ProfileLayout";
+import FacultyProfileView from "./pages/Faculty/Profile/ProfileView";
+import FacultyProfileUpdate from "./pages/Faculty/Profile/ProfileUpdate";
+
 
 function App() {
     
@@ -98,25 +106,33 @@ function App() {
             <Route path="join" element={<JoinGroup />} />
             <Route path=":groupId" element={<ProjectDetail />} />
           </Route>
-
           {/* meeting */}
           <Route path="project-group/:groupId/meetings" element={<MeetingLayout />}>
             <Route index element={<StudentMeetings />} />
             <Route path=":meetingId" element={<MeetingDetail />} />
           </Route>
-
           {/* DOCUMENTS */}
           <Route path="project-group/:groupId/documents" element={<DocumentLayout />}>
             <Route index element={<DocumentList />} />
             <Route path="upload" element={<UploadDocument />} />
             <Route path=":docId" element={<DocumentPreview />} />
           </Route>
-          
+          {/* proposal */}
           <Route path="project-group/:groupId/proposal" element={<ProposalLayout />}>
             <Route index element={<ProposalStatus />} />
             <Route path="submit" element={<ProposalForm />} />
             <Route path="view" element={<ProposalView />} />
           </Route>
+
+          {/* STUDENT – ALL PROPOSALS */}
+          <Route path="proposal" element={<StudentAllProposals />} />
+
+          {/* STUDENT – ALL MEETINGS */}
+          <Route path="meetings" element={<StudentAllMeetings />} />
+
+          {/* STUDENT – ALL DOCUMENTS */}
+          <Route path="documents" element={<StudentAllDocuments />} />
+
         </Route>
 
         <Route 
@@ -129,7 +145,11 @@ function App() {
         >
           <Route index element={ <Navigate to="dashboard" replace /> } />
           <Route path="dashboard" element={ <FacultyDashboard /> } />
-          <Route path="profile" element={ <FacultyProfile /> } />
+          <Route path="profile" element={<FacultyProfileLayout />}>
+            <Route index element={<FacultyProfileView />} />
+            <Route path="update" element={<FacultyProfileUpdate />} />
+          </Route>
+
           {/* <Route path="proposals" element={  } />
           <Route path="meetings" element={  } />
           <Route path="attendance" element={  } />

@@ -4,6 +4,11 @@ import { NavLink } from "react-router-dom";
 const StudentNavbar = () => {
     // student profile
     // logout logic
+    const logout = () => {
+        localStorage.removeItem("user");
+        window.location.href = "/login";
+    };
+
 
   return (
     <nav className="navbar navbar-dark bg-primary fixed-top px-3">
@@ -16,7 +21,7 @@ const StudentNavbar = () => {
                 <span className="text-white">
                     <NavLink className="nav-link" to="/student/profile" >Profile</NavLink>
                 </span>
-                <button className="btn btn-outline-light btn-sm">
+                <button className="btn btn-outline-light btn-sm" onClick={logout}>
                     Logout
                 </button>
             </div>

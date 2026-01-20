@@ -4,30 +4,36 @@ const ProposalLayout = () => {
   const { groupId } = useParams();
   const navigate = useNavigate();
 
+  const proposalStatus = "Pending"; // API later
+
   return (
     <div className="container mt-4">
 
       {/* 🔙 BACK BUTTON */}
-      <button
+      {/* <button
         className="btn btn-sm btn-outline-secondary mb-3"
         onClick={() =>
           navigate(`/student/project-group/${groupId}`)
         }
       >
         ← Back to Project
-      </button>
+      </button> */}
 
       <div className="d-flex justify-content-between align-items-center">
         <h3>Project Proposal</h3>
 
-        <button
-          className="btn btn-primary"
-          onClick={() =>
-            navigate(`/student/project-group/${groupId}/proposal/submit`)
-          }
-        >
-          New Proposal
-        </button>
+
+        {proposalStatus !== "Approved" && (
+          <button
+            className="btn btn-primary"
+            onClick={() =>
+              navigate(`/student/project-group/${groupId}/proposal/submit`)
+            }
+          >
+            New Proposal
+          </button>
+        )}
+
       </div>
 
       <hr />
