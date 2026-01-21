@@ -48,6 +48,16 @@ import StudentAllDocuments from "./pages/Student/Documents/StudentAllDocuments";
 import FacultyProfileLayout from "./pages/Faculty/Profile/ProfileLayout";
 import FacultyProfileView from "./pages/Faculty/Profile/ProfileView";
 import FacultyProfileUpdate from "./pages/Faculty/Profile/ProfileUpdate";
+import FacultyProjectGroups from "./pages/Faculty/Profile/projectGroups/FacultyProjectGroups";
+import FacultyProjectGroupDetail from "./pages/Faculty/Profile/projectGroups/FacultyProjectGroupDetail";
+import FacultyProjectProposal from "./pages/Faculty/Profile/projectGroups/Proposal/FacultyProjectProposal";
+import FacultyMeetings from "./pages/Faculty/FacultyMeetings";
+import FacultyAddMeeting from "./pages/Faculty/FacultyAddMeeting";
+import FacultyMeetingDetail from "./pages/Faculty/FacultyMeetingDetail";
+import FacultyProjectDocuments from "./pages/Faculty/FacultyProjectDocuments";
+import FacultyDocumentDetail from "./pages/Faculty/FacultyDocumentDetail";
+import FacultyReports from "./pages/Faculty/FacultyReports";
+import FacultyEvaluation from "./pages/Faculty/FacultyEvaluation";
 
 
 function App() {
@@ -149,6 +159,46 @@ function App() {
             <Route index element={<FacultyProfileView />} />
             <Route path="update" element={<FacultyProfileUpdate />} />
           </Route>
+
+          <Route>
+            <Route path="project-groups" element={<FacultyProjectGroups />} />
+            <Route path="project-groups/:groupId" element={<FacultyProjectGroupDetail />} />
+            <Route path="project-groups/:groupId/proposal" element={<FacultyProjectProposal />} />
+          </Route>
+
+          <Route
+            path="/faculty/project-groups/:groupId/meetings"
+            element={<FacultyMeetings />}
+          />
+          <Route
+            path="/faculty/project-groups/:groupId/meetings/add"
+            element={<FacultyAddMeeting />}
+          />
+          <Route
+            path="/faculty/project-groups/:groupId/meetings/:meetingId"
+            element={<FacultyMeetingDetail />}
+          />
+
+          <Route
+            path="/faculty/project-groups/:groupId/documents"
+            element={<FacultyProjectDocuments />}
+          />
+          <Route
+            path="/faculty/project-groups/:groupId/documents/:documentId"
+            element={<FacultyDocumentDetail />}
+          />
+
+          <Route
+            path="/faculty/reports"
+            element={<FacultyReports />}
+          />
+
+          <Route
+            path="/faculty/project-groups/:groupId/evaluation"
+            element={<FacultyEvaluation />}
+          />
+
+
 
           {/* <Route path="proposals" element={  } />
           <Route path="meetings" element={  } />
