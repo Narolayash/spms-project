@@ -58,6 +58,17 @@ import FacultyProjectDocuments from "./pages/Faculty/FacultyProjectDocuments";
 import FacultyDocumentDetail from "./pages/Faculty/FacultyDocumentDetail";
 import FacultyReports from "./pages/Faculty/FacultyReports";
 import FacultyEvaluation from "./pages/Faculty/FacultyEvaluation";
+import ProjectGroupList from "./pages/Admin/ProjectGroups/ProjectGroupList";
+import ProjectGroupDetail from "./pages/Admin/ProjectGroups/ProjectGroupDetail";
+import ProjectGroupMembers from "./pages/Admin/ProjectGroups/ProjectGroupMembers";
+import ProjectGroupApproval from "./pages/Admin/ProjectGroups/ProjectGroupApproval";
+import AssignStaff from "./pages/Admin/ProjectGroups/AssignStaff";
+import MeetingList from "./pages/Admin/Meeetings/MeetingList";
+import MeetingAttendance from "./pages/Admin/Meeetings/MeetingAttendance";
+import ReportsDashboard from "./pages/Admin/Reports/ReportsDashboard";
+import ProjectReport from "./pages/Admin/Reports/ProjectReport";
+import GuideReport from "./pages/Admin/Reports/GuideReport";
+import AttendanceReport from "./pages/Admin/Reports/AttendanceReport";
 
 
 function App() {
@@ -85,6 +96,26 @@ function App() {
           <Route path="student-form" element={ <StudentForm /> } />
           <Route path="project-types" element={ <ProjectTypeList /> } />
           <Route path="project-type-form" element={ <ProjectTypeForm /> } />
+
+          <Route path="project-groups" element={<ProjectGroupList />} />
+          <Route path="project-groups/:id" element={<ProjectGroupDetail />} />
+          <Route path="project-groups/:id/members" element={<ProjectGroupMembers />} />
+          <Route path="project-groups/:id/approval" element={<ProjectGroupApproval />} />
+          <Route
+            path="project-groups/:id/assign-staff"
+            element={<AssignStaff />}
+          />
+          <Route path="/admin/meetings" element={<MeetingList />} />
+          <Route path="/admin/meetings/:id" element={<MeetingDetail />} />
+          <Route path="/admin/meetings/:id/attendance" element={<MeetingAttendance />} />
+
+          <Route path="/admin/reports" element={<ReportsDashboard />} />
+          <Route path="/admin/reports/projects" element={<ProjectReport />} />
+          <Route path="/admin/reports/guides" element={<GuideReport />} />
+          <Route path="/admin/reports/attendance" element={<AttendanceReport />} />
+
+
+
           {/* <Route path="group" element={  } />
           <Route path="reports" element={  } /> */}
         </Route>
