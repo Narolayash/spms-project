@@ -1,6 +1,11 @@
 import React from "react";
 
 const AdminNavbar = () => {
+    const logout = () => {
+        localStorage.removeItem("user");
+        window.location.href = "/login";
+    };
+
   return (
     <nav className="navbar navbar-dark bg-dark fixed-top px-3">
         <div className="container-fluid">
@@ -10,7 +15,7 @@ const AdminNavbar = () => {
 
             <div className="d-flex align-items-center gap-3">
                 <span className="text-white">Admin</span>
-                <button className="btn btn-outline-light btn-sm">
+                <button className="btn btn-outline-light btn-sm" onClick={logout}>
                     Logout
                 </button>
             </div>
